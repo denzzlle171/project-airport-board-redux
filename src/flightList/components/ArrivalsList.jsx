@@ -1,15 +1,22 @@
-// import React from 'react';
-// import BoardItem from './BoardItem';
+import React from 'react';
+import BoardFlightList from './BoardFlightList';
+import { connect } from 'react-redux';
+import { arrivalsSelector } from '../flight.selectors';
 
 
+const ArrivalsList = ({ arrivalsData }) => {
 
-// const DeparturesList = () => {
-//   return (
-//     <ul className="board-list">
-//       {arrTest.map((item) => (
-//         <BoardItem key={item.flight} item={item} />
-//       ))}
-//     </ul>
-//   );
-// };
-// export default DeparturesList;
+
+  return (
+      <BoardFlightList flightsData={arrivalsData}/>
+  );
+};
+
+
+const mapState = (state) => {
+  return {
+    arrivalsData: arrivalsSelector(state),
+  };
+};
+
+export default connect(mapState)(ArrivalsList);

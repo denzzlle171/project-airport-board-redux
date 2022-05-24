@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React,{useState}  from 'react';
 
-class CreateFlightInput extends Component {
-  state = {
-    value: '',
-  };
-  handleChange = (event) => {
-    this.setState({ value: event.target.value });
-  };
+const CreateFlightInput = () =>{
 
-//     handleTaskCreate = () => {
-//         this.props.onCreate(this.state.value)
-//         this.setState({ value: ''})
-//   }
+  const [value, setValue] = useState("")
   
-  render() {
+   const handleChange = (event) => {
+    setValue( event.target.value );
+  };
+
+  const handleTaskCreate = () => {
+     
+    
+     console.log(`?search=${value}`);
+   };
+
     return (
       <div className="create-search">
         <i className="fa-solid fa-magnifying-glass"></i>
@@ -21,22 +21,18 @@ class CreateFlightInput extends Component {
           className="create-search__input"
           placeholder="Airline, destination or flight #"
           type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
+          value={value}
+          onChange={handleChange}
         />
         <button
           className="btn create-search__btn"
-          // onClick={this.handleTaskCreate}
+          onClick={handleTaskCreate}
         >
           SEARCH
         </button>
       </div>
     );
-  }
 }
-
-
-
 
 export default CreateFlightInput;
 

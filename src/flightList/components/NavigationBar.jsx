@@ -4,18 +4,28 @@ import { Link } from 'react-router-dom';
 
 
 
-const NavigationBar = () => {
+const NavigationBar = ({ activTabDep, activTabArr }) => {
+ 
+
   return (
     <div className="navigation-bar ">
       <ul className="navigation">
-        <li className="navigation__item  navigation__item-selected ">
-          <Link to="/Departures">
+        <li
+          className={`navigation__item ${
+            activTabDep && 'navigation__item-selected'
+          }`}
+        >
+          <Link to="/departures">
             <i className="fa-solid fa-plane-departure "></i>
             Departures
           </Link>
         </li>
-        <li className="navigation__item ">
-          <Link to="/Arrivals">
+        <li
+          className={`navigation__item ${
+            activTabArr && 'navigation__item-selected'
+          }`}
+        >
+          <Link to="/arrivals">
             <i className="fa-solid fa-plane-arrival "></i>
             Arrivals
           </Link>
@@ -37,5 +47,4 @@ const NavigationBar = () => {
 };
 export default NavigationBar;
 
-
-
+        
