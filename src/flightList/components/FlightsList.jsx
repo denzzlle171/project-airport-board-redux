@@ -1,58 +1,64 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+// import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import DeparturesList from './DeparturesList';
 import ArrivalsList from './ArrivalsList';
-
 import CreateFlightInput from './CreateFlightInput';
 import NavigationBar from './NavigationBar';
 import  {fetchFlightList}  from '../flightGateway'
 import { connect } from 'react-redux';
 import * as allActions  from '../flight.actions'
 
-class FlightsList extends Component {
 
+const FlightsList = ({ flightDataRecived }) => {
 
-  componentDidMount() {
+  useEffect(() => {
+    fetchFlightList().then((flightData) => flightDataRecived(flightData[0]));
+  });
 
-    // fetchFlightList().
-    //   then((flightData) =>
-    //   console.log(flightData[0])
-    // );
+ 
+  return (
+    <div className="page">
+      <h1 className="page_title">SEARCH FLIGHT</h1>
+      <main className="page_search">
+        <CreateFlightInput />
 
-    fetchFlightList().
-      then((flightData) =>
-      this.props.flightDataRecived(flightData[0])
-    );
-  }
+        <Routes>
+          <Route
+            path="/departures"
+            element={
+              <>
+                <NavigationBar activTabDep={true} />
+                <DeparturesList />
+              </>
+            }
+          />
 
-  render() {
-    return (
-      <div className="page">
-        <h1 className="page_title">SEARCH FLIGHT</h1>
-        <main className="page_search">
-          <CreateFlightInput />
+          <Route
+            path="/arrivals"
+            element={
+              <>
+                <NavigationBar activTabArr={true} />
+                <ArrivalsList />
+              </>
+            }
+          />
 
-          <Switch>
-            <Route path={'/departures'}>
-              <NavigationBar activTabDep={true} />
-              <DeparturesList />
-            </Route>
-
-            <Route path="/arrivals">
-              <NavigationBar activTabArr={true} />
-              <ArrivalsList />
-            </Route>
-
-            <Route exact path="/">
-              <NavigationBar activTabDep={true} />
-              <DeparturesList />
-            </Route>
-          </Switch>
-        </main>
-      </div>
-    );
-  }
-}
+          <Route
+            path="/"
+            element={
+              <>
+                <NavigationBar activTabDep={true} />
+                <DeparturesList />
+              </>
+            }
+          />
+        </Routes>
+      </main>
+    </div>
+  );
+  // }
+};
 
 
 const mapDispatch = {
@@ -61,3 +67,5 @@ const mapDispatch = {
 
 
 export default connect(null, mapDispatch)(FlightsList)
+
+
