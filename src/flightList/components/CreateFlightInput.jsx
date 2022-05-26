@@ -1,17 +1,25 @@
 import React,{useState}  from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 
 const CreateFlightInput = () =>{
 
   const [value, setValue] = useState("")
+
+  const [searchParam, setSearchParam] = useSearchParams();
+
   
    const handleChange = (event) => {
-    setValue( event.target.value );
+     setValue(event.target.value);
+     
   };
 
   const handleTaskCreate = () => {
-     
+    if (value) {
+      setSearchParam({ search: value })
+    } else{
+    setSearchParam({})};
     
-     console.log(`?search=${value}`);
    };
 
     return (

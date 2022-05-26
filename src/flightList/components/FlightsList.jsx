@@ -1,4 +1,4 @@
-// import React, { Component } from 'react';
+
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import DeparturesList from './DeparturesList';
@@ -16,16 +16,18 @@ const FlightsList = ({ flightDataRecived }) => {
     fetchFlightList().then((flightData) => flightDataRecived(flightData[0]));
   });
 
- 
+  const serchParam = window.location.search;
+  console.log(serchParam);
+  
   return (
     <div className="page">
       <h1 className="page_title">SEARCH FLIGHT</h1>
       <main className="page_search">
         <CreateFlightInput />
-
         <Routes>
           <Route
             path="/departures"
+            // path={`/departures${serchParam}`}
             element={
               <>
                 <NavigationBar activTabDep={true} />
@@ -33,7 +35,6 @@ const FlightsList = ({ flightDataRecived }) => {
               </>
             }
           />
-
           <Route
             path="/arrivals"
             element={
@@ -43,7 +44,6 @@ const FlightsList = ({ flightDataRecived }) => {
               </>
             }
           />
-
           <Route
             path="/"
             element={
