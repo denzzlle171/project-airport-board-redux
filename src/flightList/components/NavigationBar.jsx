@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-
-
 const NavigationBar = ({ activTabDep, activTabArr, searchParam }) => {
-
-console.log(searchParam);
 
   return (
     <div className="navigation-bar ">
