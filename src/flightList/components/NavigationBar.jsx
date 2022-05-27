@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 
 
-const NavigationBar = ({ activTabDep, activTabArr }) => {
- 
+const NavigationBar = ({ activTabDep, activTabArr, searchParam }) => {
+
+console.log(searchParam);
 
   return (
     <div className="navigation-bar ">
@@ -15,7 +16,7 @@ const NavigationBar = ({ activTabDep, activTabArr }) => {
             activTabDep && 'navigation__item-selected'
           }`}
         >
-          <Link to="/departures">
+          <Link to={searchParam ? `/departures?${searchParam}` : '/departures'}>
             <i className="fa-solid fa-plane-departure "></i>
             Departures
           </Link>
@@ -25,7 +26,7 @@ const NavigationBar = ({ activTabDep, activTabArr }) => {
             activTabArr && 'navigation__item-selected'
           }`}
         >
-          <Link to="/arrivals">
+          <Link to={searchParam ? `/arrivals?${searchParam}` : '/arrivals'}>
             <i className="fa-solid fa-plane-arrival "></i>
             Arrivals
           </Link>

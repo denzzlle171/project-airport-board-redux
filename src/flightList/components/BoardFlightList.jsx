@@ -6,7 +6,6 @@ import { useSearchParams } from 'react-router-dom';
 const BoardFlightList = ({ flightsData }) => {
 
   const [searchParam, setSearchParam] = useSearchParams();
-
   const filter = searchParam.get('search') || '';
 
 

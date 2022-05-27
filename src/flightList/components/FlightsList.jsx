@@ -8,29 +8,32 @@ import NavigationBar from './NavigationBar';
 import  {fetchFlightList}  from '../flightGateway'
 import { connect } from 'react-redux';
 import * as allActions  from '../flight.actions'
-
+import { useSearchParams } from 'react-router-dom';
 
 const FlightsList = ({ flightDataRecived }) => {
+
+  const [searchParam, setSearchParam] = useSearchParams();
 
   useEffect(() => {
     fetchFlightList().then((flightData) => flightDataRecived(flightData[0]));
   });
 
-  const serchParam = window.location.search;
-  console.log(serchParam);
+ 
+
+ 
   
   return (
     <div className="page">
       <h1 className="page_title">SEARCH FLIGHT</h1>
       <main className="page_search">
-        <CreateFlightInput />
+        <CreateFlightInput setSearchParam={setSearchParam} />
         <Routes>
           <Route
             path="/departures"
-            // path={`/departures${serchParam}`}
+            
             element={
               <>
-                <NavigationBar activTabDep={true} />
+                <NavigationBar activTabDep={true} searchParam={searchParam} />
                 <DeparturesList />
               </>
             }
@@ -39,7 +42,7 @@ const FlightsList = ({ flightDataRecived }) => {
             path="/arrivals"
             element={
               <>
-                <NavigationBar activTabArr={true} />
+                <NavigationBar activTabArr={true} searchParam={searchParam} />
                 <ArrivalsList />
               </>
             }
@@ -48,7 +51,7 @@ const FlightsList = ({ flightDataRecived }) => {
             path="/"
             element={
               <>
-                <NavigationBar activTabDep={true} />
+                <NavigationBar activTabDep={true} searchParam={searchParam} />
                 <DeparturesList />
               </>
             }
