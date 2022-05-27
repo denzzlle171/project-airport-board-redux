@@ -1,6 +1,6 @@
 import React from "react";
 import BoardItem from './BoardItem';
-// import NotFound from './NotFound';
+import NotFound from './NotFound';
 import { useSearchParams } from 'react-router-dom';
 
 const BoardFlightList = ({ flightsData }) => {
@@ -12,20 +12,19 @@ const BoardFlightList = ({ flightsData }) => {
   if (!flightsData) {
   return null
   }
+
+const filterData = flightsData.filter((line) =>
+  line.Flight.toUpperCase().includes(filter.toUpperCase()))
   
+
   return (
     <>
-    <ul className="board-list">
-      {flightsData
-        .filter((line) =>
-          line.Flight.toUpperCase().includes(filter.toUpperCase())
-        )
-        .map((item) => (
+      <ul className="board-list">
+        {filterData.map((item) => (
           <BoardItem key={item.Flight} item={item} />
-           
         ))}
-    </ul>
-    {/* <NotFound/> */}
+      </ul>
+      {filterData.length === 0 && < NotFound />}
     </>
   );
 };

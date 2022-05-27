@@ -17,7 +17,4 @@ const mapState = (state) => {
 };
 
 
-
-// export default DeparturesList;
-
 export default connect(mapState)(DeparturesList);
