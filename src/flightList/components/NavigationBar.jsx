@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const NavigationBar = ({ activTabDep, activTabArr, searchParam }) => {
+const NavigationBar = ({ activeTabDep, activeTabArr, searchParam }) => {
 
   return (
     <div className="navigation-bar ">
       <ul className="navigation">
         <li
           className={`navigation__item ${
-            activTabDep && 'navigation__item-selected'
+            activeTabDep && 'navigation__item-selected'
           }`}
         >
           <Link to={searchParam ? `/departures?${searchParam}` : '/departures'}>
@@ -19,7 +19,7 @@ const NavigationBar = ({ activTabDep, activTabArr, searchParam }) => {
         </li>
         <li
           className={`navigation__item ${
-            activTabArr && 'navigation__item-selected'
+            activeTabArr && 'navigation__item-selected'
           }`}
         >
           <Link to={searchParam ? `/arrivals?${searchParam}` : '/arrivals'}>

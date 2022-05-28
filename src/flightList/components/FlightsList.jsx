@@ -26,7 +26,7 @@ const FlightsList = ({ fetchDataRecived }) => {
             path="/departures"
             element={
               <>
-                <NavigationBar activTabDep={true} searchParam={searchParam} />
+                <NavigationBar activeTabDep={true} searchParam={searchParam} />
                 <DeparturesList />
               </>
             }
@@ -35,7 +35,7 @@ const FlightsList = ({ fetchDataRecived }) => {
             path="/arrivals"
             element={
               <>
-                <NavigationBar activTabArr={true} searchParam={searchParam} />
+                <NavigationBar activeTabArr={true} searchParam={searchParam} />
                 <ArrivalsList />
               </>
             }
@@ -44,7 +44,7 @@ const FlightsList = ({ fetchDataRecived }) => {
             path="/"
             element={
               <>
-                <NavigationBar activTabDep={true} searchParam={searchParam} />
+                <NavigationBar activeTabDep={true} searchParam={searchParam} />
                 <DeparturesList />
               </>
             }
