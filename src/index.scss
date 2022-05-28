@@ -14,16 +14,14 @@ body {
  flex-direction: column;
  align-items: center;
  
-   
   &_title{
     width: 740px;
     height: 80px;
-  //  background-color: red;
     line-height: 80px;
     font-size: 70px;
     font-weight: 300;
     margin-top: 40px;
-   margin-bottom: 25px;
+    margin-bottom: 25px;
 
   }
 }
@@ -35,15 +33,13 @@ body {
     width: 740px;
     height: 80px;
     margin: auto;
-        // overflow: visible;
-
+    
        &__input{
-
        padding-left: 70px;
        padding-right: 220px;
        font-size: 24px;
        border: none;
-           outline: none;
+       outline: none;
        width: 100%;
        border-radius: 0 90px 0 0;
        height: 80px;
@@ -107,21 +103,21 @@ body {
     width: 600px;
     text-align: center ;
 
-        a{
+     a {
       color:#fff;
-        }
+     }
   }
 
   
 .navigation__item-selected{
-  color:#1eb7ee ;
+    color:#1eb7ee ;
     background-color: #fff;
     border-radius: 60px 60px 0 0;
     border: 1px solid #fff;
 
-        a{
+     a {
       color:#1eb7ee;
-      }
+     }
  }
 }
 
@@ -143,11 +139,17 @@ a{
     display: flex;
     margin: 0px;
     list-style-type: none;
-    justify-content: space-around;
+    
   }
   &__item{
+     font-size: 18px;
     margin-top: 70px;
+    width: 100px;
+    margin-left: 70px; 
+    margin-bottom: 10px;
     color:#a4a4a4;
+    text-align: center;
+    
   }
 }
 
@@ -161,14 +163,13 @@ a{
     height: 80px;
     line-height: 80px;
     font-size: 24px;
-    
-    justify-content: space-around
-        
+          
   }
 }
 .elmt{
-  
-     margin-left: 40px; 
+     text-align: center;
+     width: 100px;
+     margin-left: 70px; 
     }
 
 .board-list > li:nth-child(odd) {
@@ -178,6 +179,16 @@ a{
    background-color:#fff; 
   }     
 
-
+.not-found{
+  display: flex;
+  justify-content:center ;
+  background-color: #a4a4a424;
+  padding: 20px;
+    &__title{
+      color: #ff0000; 
+      font-size: 20px;
+      font-weight: 500;
+    }
+}
 
   
