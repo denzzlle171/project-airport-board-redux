@@ -5,6 +5,7 @@ import { departuresSelector } from '../flight.selectors';
 
 
 const DeparturesList = ({ departuresData }) => {
+
   return <BoardFlightList  flightsData={departuresData} />;
 };
 

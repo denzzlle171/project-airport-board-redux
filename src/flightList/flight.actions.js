@@ -11,7 +11,7 @@ export const flightDataRecived = (flightData) => {
 
 export const fetchDataRecived = () => {
   return function(dispatch) {
-    fetchFlightList().then((flightData) =>dispatch (flightDataRecived(flightData[0])));
+    fetchFlightList().then((flightData) =>dispatch (flightDataRecived(flightData)));
  
     }
 };
