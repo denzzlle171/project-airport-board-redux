@@ -18,12 +18,17 @@ import { TimeParsing } from '../flightGateway';
         </span>
         <span className="elmt">landed {TimeParsing(item.timeTakeofFact)}</span>
         <span className="elmt">
-          <img
-            className="image"
-            src={`${item.codeShareData[0].airline.en.logoSmallName}`}
-            alt=""
-          />
-          <span> {item.codeShareData[0].airline.en.name} </span>
+          <div className="company">
+            <img
+              className="company__image"
+              src={`${item.codeShareData[0].airline.en.logoSmallName}`}
+              alt=""
+            />
+            <span className="company__name">
+              {' '}
+              {item.codeShareData[0].airline.en.name}{' '}
+            </span>
+          </div>
         </span>
         <span className="elmt">{item.codeShareData[0].codeShare}</span>
       </li>
