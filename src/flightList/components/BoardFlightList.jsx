@@ -2,7 +2,7 @@ import React from "react";
 import BoardItem from './BoardItem';
 import NotFound from './NotFound';
 import { useSearchParams } from 'react-router-dom';
-import { DataParsing} from '../flightGateway';
+import { parseData } from '../flightGateway';
  
 const BoardFlightList = ({ flightsData }) => {
   const [searchParam] = useSearchParams();
@@ -18,7 +18,7 @@ const BoardFlightList = ({ flightsData }) => {
   const getDay = 10 // new Date(data).getDate();
 
   const searchFiltred = flightsData.filter(
-    (item) => DataParsing(item.actual) === getDay
+    (item) => parseData(item.actual) === getDay
   );
  
   const filterData = searchFiltred.filter(

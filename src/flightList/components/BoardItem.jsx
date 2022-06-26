@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimeParsing } from '../flightGateway';
+import { parseTime } from '../flightGateway';
 
   const BoardItem = ({ item }) => {
     return (
@@ -11,12 +11,12 @@ import { TimeParsing } from '../flightGateway';
             <i className="fa-solid fa-d"></i>
           )}
         </span>
-        <span className="elmt">{TimeParsing(item.actual)}</span>
+        <span className="elmt">{parseTime(item.actual)}</span>
         <span className="elmt">
           {item['airportToID' + '.' + 'city_en'] ||
             item['airportFromID' + '.' + 'city_en']}
         </span>
-        <span className="elmt">landed {TimeParsing(item.timeTakeofFact)}</span>
+        <span className="elmt">landed {parseTime(item.timeTakeofFact)}</span>
         <span className="elmt">
           <div className="company">
             <img

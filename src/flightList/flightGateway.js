@@ -8,14 +8,14 @@ export const fetchFlightList = () =>{
 }
  
 
-export const TimeParsing = (data) => {
-    const hours = new Date(data).getHours();
-    const minute = new Date(data).getMinutes();
-    const minutes = (minute < 10) ? `0${minute}` : minute;
-  return `${hours}:${minutes}`;   
-}
+export const parseTime = (data) => {
+  const hours = new Date(data).getHours();
+  const minute = new Date(data).getMinutes();
+  const minutes = minute < 10 ? `0${minute}` : minute;
+  return `${hours}:${minutes}`;
+};
 
-export const DataParsing = (data) => {
+export const parseData = (data) => {
   const day = new Date(data).getDate();
   return day;
 };
