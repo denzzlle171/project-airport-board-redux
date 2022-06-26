@@ -5,15 +5,14 @@ import ArrivalsList from './ArrivalsList';
 import CreateFlightInput from './CreateFlightInput';
 import NavigationBar from './NavigationBar';
 import { connect } from 'react-redux';
-import * as allActions  from '../flight.actions'
+import * as allActions from '../flight.actions';
 import { useSearchParams } from 'react-router-dom';
-
 
 const FlightsList = ({ fetchDataRecived }) => {
   const [searchParam, setSearchParam] = useSearchParams();
 
   useEffect(() => {
-    fetchDataRecived()
+    fetchDataRecived();
   });
 
   return (
@@ -59,6 +58,4 @@ const mapDispatch = {
   fetchDataRecived: allActions.fetchDataRecived,
 };
 
-export default connect(null, mapDispatch)(FlightsList)
-
-
+export default connect(null, mapDispatch)(FlightsList);

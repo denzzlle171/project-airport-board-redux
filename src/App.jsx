@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 const App = () => {
-    return (
-        <BrowserRouter>
-          <Provider store={store}>
-            <FlightsList />
-          </Provider>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <FlightsList />
+      </Provider>
+    </BrowserRouter>
+  );
 };
 
 export default App;

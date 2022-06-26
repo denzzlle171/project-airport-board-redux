@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const NavigationBar = ({ activeTabDep, activeTabArr, searchParam }) => {
-
   return (
     <div className="navigation-bar ">
       <ul className="navigation">
@@ -43,5 +41,3 @@ const NavigationBar = ({ activeTabDep, activeTabArr, searchParam }) => {
   );
 };
 export default NavigationBar;
-
-        

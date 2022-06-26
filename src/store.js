@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import flightReducer from './flightList/flight.reducer';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 
 const store = configureStore({
   reducer: {

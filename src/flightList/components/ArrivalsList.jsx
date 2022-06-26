@@ -3,14 +3,9 @@ import BoardFlightList from './BoardFlightList';
 import { connect } from 'react-redux';
 import { arrivalsSelector } from '../flight.selectors';
 
-
 const ArrivalsList = ({ arrivalsData }) => {
-
-  return (
-      <BoardFlightList flightsData={arrivalsData}/>
-  );
+  return <BoardFlightList flightsData={arrivalsData} />;
 };
-
 
 const mapState = (state) => {
   return {

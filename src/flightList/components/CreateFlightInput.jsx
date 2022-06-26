@@ -1,8 +1,6 @@
-import React,{useState}  from 'react';
-
+import React, { useState } from 'react';
 
 const CreateFlightInput = ({ setSearchParam }) => {
-  
   const [value, setValue] = useState('');
 
   const handleChange = (event) => {
@@ -35,4 +33,3 @@ const CreateFlightInput = ({ setSearchParam }) => {
 };
 
 export default CreateFlightInput;
-

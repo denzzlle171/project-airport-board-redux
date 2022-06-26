@@ -1,7 +1,7 @@
-import {FLIGHT_DATA_RECIVED} from './flight.actions'
+import { FLIGHT_DATA_RECIVED } from './flight.actions';
 
 const initialState = {
- flightData: null,
+  flightData: null,
 };
 
 const flightReducer = (state = initialState, action) => {
