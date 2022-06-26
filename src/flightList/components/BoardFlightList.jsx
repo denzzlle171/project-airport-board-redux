@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { DataParsing} from '../flightGateway';
  
 const BoardFlightList = ({ flightsData }) => {
-  const [searchParam, setSearchParam] = useSearchParams();
+  const [searchParam] = useSearchParams();
   const filter = searchParam.get('search') || '';
 
 
