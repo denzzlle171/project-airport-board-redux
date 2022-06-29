@@ -4,28 +4,28 @@ import { Link } from 'react-router-dom';
 const NavigationBar = ({ activeTabDep, activeTabArr, searchParam }) => {
   return (
     <div className="navigation-bar ">
-      <ul className="navigation">
-        <li
-          className={`navigation__item ${
-            activeTabDep && 'navigation__item-selected'
-          }`}
-        >
-          <Link to={searchParam ? `/departures?${searchParam}` : '/departures'}>
+      <div className="navigation">
+        <Link to={searchParam ? `/departures?${searchParam}` : '/departures'}>
+          <div
+            className={`navigation__item ${
+              activeTabDep && 'navigation__item-selected'
+            }`}
+          >
             <i className="fa-solid fa-plane-departure "></i>
             Departures
-          </Link>
-        </li>
-        <li
-          className={`navigation__item ${
-            activeTabArr && 'navigation__item-selected'
-          }`}
-        >
-          <Link to={searchParam ? `/arrivals?${searchParam}` : '/arrivals'}>
+          </div>
+        </Link>
+        <Link to={searchParam ? `/arrivals?${searchParam}` : '/arrivals'}>
+          <div
+            className={`navigation__item ${
+              activeTabArr && 'navigation__item-selected'
+            }`}
+          >
             <i className="fa-solid fa-plane-arrival "></i>
             Arrivals
-          </Link>
-        </li>
-      </ul>
+          </div>
+        </Link>
+      </div>
 
       <div className="list-title">
         <ul className="list-title__board">

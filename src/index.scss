@@ -95,7 +95,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     list-style-type: none;
-    width: 600px;
+    width: 560px;
     text-align: center;
 
     a {
@@ -132,14 +132,16 @@ a {
     display: flex;
     margin: 0px;
     list-style-type: none;
+
+
     :nth-child(2) {
-      margin-left: 25px;
+      margin-left: 20px;
     }
     :nth-child(3) {
-      margin-left: 60px;
+      margin-left: 65px;
     }
     :nth-child(4) {
-      margin-left: 110px;
+      margin-left: 115px;
     }
     :nth-child(5) {
       margin-left: 130px;
@@ -153,7 +155,7 @@ a {
     font-size: 18px;
     margin-top: 70px;
     width: 100px;
-    margin-left: 40px;
+    margin-left: 35px;
     margin-bottom: 10px;
     color: #a4a4a4;
     text-align: center;
