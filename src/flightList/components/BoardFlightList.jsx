@@ -18,8 +18,16 @@ const BoardFlightList = ({ flightsData }) => {
     (item) => parseData(item.actual) === getDay
   );
 
-  const filterData = searchFiltred.filter((line) =>
-    line.codeShareData[0].codeShare.toUpperCase().includes(filter.toUpperCase())
+  const filterData = searchFiltred.filter(
+    (line) =>
+      line.codeShareData[0].codeShare
+        .toUpperCase()
+        .includes(filter.toUpperCase()) ||
+      line.airline.en.name.toUpperCase().includes(filter.toUpperCase())
+    ||
+      ((line['airportToID.city_en']) ? line['airportToID.city_en'].toUpperCase().includes(filter.toUpperCase()):null||
+    (line['airportFromID.city_en'])? line['airportFromID.city_en'].toUpperCase().includes(filter.toUpperCase()):null
+      )
   );
 
   return (
